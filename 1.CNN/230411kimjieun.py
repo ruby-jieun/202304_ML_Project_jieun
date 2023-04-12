@@ -7,7 +7,7 @@ from tensorflow.keras.utils import to_categorical
 import soundfile as sf
 
 # 데이터 경로
-data_dir = 'Data/genres_original'
+data_dir = '1.CNN/Data/genres_original'
 
 # 데이터 전처리 함수
 
@@ -102,7 +102,7 @@ def predict_genre(file_path):
 
 
 # 테스트 음원 경로
-test_file_path = 'Data/genres_original/blues/blues.00000.wav'
+test_file_path = '1.CNN/Data/genres_original/blues/blues.00000.wav'
 
 # 테스트 음원 예측 및 정확도 출력
 predicted_genre = predict_genre(test_file_path)
