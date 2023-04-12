@@ -1,0 +1,23 @@
+이 코드에서 모델은 Convolutional Neural Network (CNN)을 사용하여 생성했습니다.
+
+#모델 구성
+
+1. tf.keras.layers.Reshape((X.shape[1], 1, 1), input_shape=X.shape[1:]): 입력 데이터의 차원을 재구성합니다. (X.shape[1], 1, 1) 크기로 재구성하여 2D 컨볼루션 레이어를 사용하기 위한 준비를 합니다.
+
+2. tf.keras.layers.Conv2D(16, 3, padding='same', activation='relu'): 16개의 필터를 사용하여 입력 데이터를 합성곱 합니다. 각 필터의 크기는 3x3이고 활성화 함수로 ReLU를 사용합니다.
+
+3. tf.keras.layers.MaxPooling2D(pool_size=(2, 1)): 2x1 크기의 맥스 풀링 레이어를 추가하여 다운샘플링합니다.
+
+4. tf.keras.layers.Conv2D(32, 3, padding='same', activation='relu'): 32개의 필터를 사용하여 입력 데이터를 합성곱 합니다. 각 필터의 크기는 3x3이고 활성화 함수로 ReLU를 사용합니다.
+
+5. tf.keras.layers.MaxPooling2D(pool_size=(2, 1)): 2x1 크기의 맥스 풀링 레이어를 추가하여 다운샘플링합니다.
+
+6. tf.keras.layers.Conv2D(64, 3, padding='same', activation='relu'): 64개의 필터를 사용하여 입력 데이터를 합성곱 합니다. 각 필터의 크기는 3x3이고 활성화 함수로 ReLU를 사용합니다.
+
+7. tf.keras.layers.MaxPooling2D(pool_size=(2, 1)): 2x1 크기의 맥스 풀링 레이어를 추가하여 다운샘플링합니다.
+
+8. tf.keras.layers.Flatten(): 2D 데이터를 1D로 평탄화합니다.
+
+9. tf.keras.layers.Dense(128, activation='relu'): 128개의 뉴런을 사용하여 완전 연결 레이어를 추가합니다. 활성화 함수로 ReLU를 사용합니다.
+
+10. tf.keras.layers.Dense(len(class_names), activation='softmax'): 출력 레이어를 추가합니다. 클래스 수와 동일한 수의 뉴런을 사용하며, 활성화 함수로 softmax를 사용합니다. 이 레이어는 입력 데이터에 대한 각 클래스의 확률을 출력합니다.
