@@ -211,6 +211,15 @@ print(f"최적의 하이퍼파라미터: {best_params}")
 교차 검증된 정확도: 76.88%
 ```
 
+**데이터 셋을 features_3_sec.csv로 변경한 코드 실행 결과**
+
+```
+최적의 하이퍼파라미터: {'learning_rate': 0.09796599427179664, 'max_depth': None, 'min_child_weight': 3, 'n_estimators': 243}
+예측한 음악 장르: classical
+정확도: 90.14%
+교차 검증된 정확도: 88.39%
+```
+
 
 
 
