@@ -138,16 +138,16 @@ CNN1에서 모델 아키텍처 변경으로 Conv2D 레이어의 필터 개수를
 
 
 
-###  xgboost1
-
-
-
 * `RandomForestClassifier`를 사용한 모델링에서 `XGBoost`를 사용하여 바꾸어보았다.
 * `XGBoost`는 분류 및 회귀 분석에 모두 사용이 가능하며, 고차원의 특성과 대량의 데이터에 대해 높은 성능을 발휘하여 높은 정확도와 빠른 실행 속도를 보장한다.
 
 * `XGBoost`는 `Gradient Boosting` 알고리즘을 기반으로 하며, 여러 개의 결정 트리를 사용하여 모델을 구성하므로 `RandomForestClassifier`보다 성능이 우수할 것이란 예측을 했다.
 * 또한 ` XGBoost`는 하이퍼파라미터 튜닝을 통해 모델의 성능을 더욱 개선할 수 있다. 
   `GridSearchCV`와 같은 교차 검증 기법을 사용하여 최적의 하이퍼파라미터를 자동으로 찾을 수 있다.
+
+
+
+###  xgboost1
 
 
 
