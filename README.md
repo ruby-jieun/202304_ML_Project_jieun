@@ -40,7 +40,7 @@
 
        
 
-       ### 3. RandomForestClassifier
+       ### 3. RandomForestClassifier1
 
        knn2의 코드에서 모델을 변경하여, RandomForestClassifier로 모델을 생성하고, 그리드 검색을 사용하여 최적의 하이퍼파라미터를 찾아 정확도를 높이는 시도를 해 보았다.
 
