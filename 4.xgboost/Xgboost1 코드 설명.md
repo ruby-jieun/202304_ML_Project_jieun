@@ -91,3 +91,8 @@ param_grid = {'n_estimators': [10, 50, 100, 200],
 
 * 무작위 검색을 사용하려면 `RandomizedSearchCV`를 `GridSearchCV` 대신 사용하고, 각 하이퍼파라미터의 가능한 값 범위를 지정해야 한다. `Xgboost2`에서는 `RandomizedSearchCV`를 사용하여 수정해 볼 것이다.
 
+
+
+
+
+작성중
