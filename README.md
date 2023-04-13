@@ -6,7 +6,7 @@
 
        
 
-       ### 1. knn1
+       ## 1. knn1
 
        코드 실행 결과
 
@@ -21,7 +21,7 @@
 
        
 
-       ### 2. knn2
+       ## 2. knn2
 
        knn1의 코드에서 교차 검증을 사용하여 정확도를 높이고, 그리드 검색을 사용하여 최적의 k값을 찾아 수정해보았다.
 
@@ -40,7 +40,7 @@
 
        
 
-       ### 3. RandomForestClassifier1
+       ## 1. RandomForestClassifier1
 
        knn2의 코드에서 모델을 변경하여, RandomForestClassifier로 모델을 생성하고, 그리드 검색을 사용하여 최적의 하이퍼파라미터를 찾아 정확도를 높이는 시도를 해 보았다.
 
