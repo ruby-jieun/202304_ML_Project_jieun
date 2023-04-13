@@ -26,6 +26,9 @@ def extract_features(file_path):
 # 데이터셋 불러오기
 data = pd.read_csv("2.KNN/[230413]KNN/Data/features_30_sec.csv")
 
+num_rows = data.shape[0]
+print(f"데이터셋의 행 개수: {num_rows}")
+
 # 특성과 레이블 분리
 X = data.drop(['filename', 'label'], axis=1).values
 y = data['label'].values
