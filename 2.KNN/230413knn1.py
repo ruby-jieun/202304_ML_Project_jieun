@@ -24,7 +24,7 @@ def extract_features(file_path):
 
 
 # 데이터셋 불러오기
-data = pd.read_csv("2.KNN/[230413]KNN/Data/features_30_sec.csv")
+data = pd.read_csv("2.KNN/Data/features_30_sec.csv")
 
 # 특성과 레이블 분리
 X = data.drop(['filename', 'label'], axis=1).values
@@ -44,7 +44,7 @@ knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(X_train, y_train)
 
 # 테스트 파일 경로 지정
-test_file_path = "2.KNN/[230413]KNN/Data/genres_original/blues/blues.00000.wav"
+test_file_path = "2.KNN/Data/genres_original/blues/blues.00000.wav"
 
 # 테스트 파일에서 특성 추출
 test_file_features = extract_features(test_file_path)

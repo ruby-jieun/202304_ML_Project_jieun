@@ -24,7 +24,7 @@ def extract_features(file_path):
 
 
 # 데이터셋 불러오기
-data = pd.read_csv("2.KNN/[230413]KNN/Data/features_30_sec.csv")
+data = pd.read_csv("3.RandomForestClassifier/Data/features_30_sec.csv")
 
 num_rows = data.shape[0]
 print(f"데이터셋의 행 개수: {num_rows}")
@@ -67,7 +67,7 @@ rf.fit(X_train, y_train)
 
 
 # 테스트 파일 경로 지정
-test_file_path = "2.KNN/[230413]KNN/Data/genres_original/blues/blues.00000.wav"
+test_file_path = "3.RandomForestClassifier/Data/genres_original/blues/blues.00000.wav"
 
 # 테스트 파일에서 특성 추출
 test_file_features = extract_features(test_file_path)
