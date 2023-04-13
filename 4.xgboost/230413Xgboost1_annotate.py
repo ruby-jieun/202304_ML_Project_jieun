@@ -39,7 +39,7 @@ def extract_features(file_path):
 
 
 # 오디오 파일의 특징을 저장한 CSV 파일을 읽어온다.
-data = pd.read_csv("3.RandomForestClassifier/Data/features_30_sec.csv")
+data = pd.read_csv("4.xgboost/Data/features_30_sec.csv")
 
 # 음악 장르 레이블을 숫자로 변환한다.
 le = LabelEncoder()

@@ -24,7 +24,7 @@ def extract_features(file_path):
     return np.hstack([mfccs, chroma, mel, contrast, tonnetz])[:58]
 
 
-data = pd.read_csv("3.RandomForestClassifier/Data/features_30_sec.csv")
+data = pd.read_csv("4.xgboost/Data/features_30_sec.csv")
 
 le = LabelEncoder()
 data['label'] = le.fit_transform(data['label'])
