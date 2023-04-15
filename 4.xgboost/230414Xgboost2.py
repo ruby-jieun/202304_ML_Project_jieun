@@ -28,7 +28,7 @@ def extract_features(file_path, n_features):
     return feature_vector[:n_features]  # 수정된부분
 
 
-data = pd.read_csv("4.xgboost/Data/features_30_sec.csv")
+data = pd.read_csv("4.xgboost/Data/features_3_sec.csv")
 
 le = LabelEncoder()
 data['label'] = le.fit_transform(data['label'])

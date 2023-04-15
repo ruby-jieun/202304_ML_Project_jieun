@@ -45,8 +45,8 @@ xgb_model = xgb.XGBClassifier(**best_params, random_state=42)
 xgb_model.fit(X_train, y_train)
 ```
 
-```python
-xgb_model = xgb.XGBClassifier(random_state=42)
+```
+xgb_model = xgb.XGBClassifier(**best_params, random_state=42)
 ```
 
 * `random_state=42`로 설정한 이유는 재현 가능한 일관된 결과를 얻기 위함이다. 
@@ -95,4 +95,14 @@ param_grid = {'n_estimators': [10, 50, 100, 200],
 
 
 
-작성중
+```
+test_file_features_scaled = scaler.transform(test_file_features.reshape(1, -1))
+```
+
+* `test_file_features.reshape(1, -1)`: `test_file_features`의 형상을 변경한다. `reshape(1, -1)`은 `test_file_features`를 1행의 2차원 배열로 변환하는 작업이다. 여기서 `-1`은 배열의 원래 크기에 맞게 열의 개수를 자동으로 설정한다는 의미다. 이 작업을 통해, `test_file_features`가 scaler 객체의 `transform` 메소드에 입력으로 사용될 수 있는 형태로 변환된다.
+* `scaler.transform(...)`: `StandardScaler` 객체인 `scaler`를 사용하여 `test_file_features`를 변환한다. 이 과정에서 훈련 데이터셋에 적용했던 평균 및 표준편차를 기반으로 `test_file_features`의 값을 스케일링한다. 이렇게 스케일링된 값을 `test_file_features_scaled` 변수에 저장한다.
+* 이렇게 스케일링된 테스트 파일 특성(`test_file_features_scaled`)을 XGBoost 모델의 입력으로 사용하여 장르를 예측한다. 이는 훈련 데이터셋과 동일한 전처리 과정을 거친 테스트 데이터를 사용해 모델의 성능을 평가하기 위함이다.
+* `(1, -1)` 부분을 변경하면 `test_file_features`의 형상이 변경되어 다른 형태의 배열이 된다. 예를 들어, `(2, -1)` 또는 `(-1, 1)`과 같이 변경할 수 있다.
+* `(2, -1)`로 변경할 경우: 이 경우, `test_file_features`가 2행의 2차원 배열로 변환된다. 그러나 이것은 오류를 발생시킬 것이다. 왜냐하면 `test_file_features`는 단일 오디오 파일에서 추출한 특성 벡터이기 때문에, 2행으로 변환하는 것은 올바르지 않다.
+* `(-1, 1)`로 변경할 경우: 이 경우, `test_file_features`는 각 특성을 하나의 행으로 갖는 2차원 배열로 변환된다. 이 형태로도 `scaler.transform()` 메소드를 사용할 수 있지만, 이렇게 변환된 배열은 XGBoost 모델에 입력으로 사용될 때 크기가 맞지 않아 오류가 발생할 수 있다.
+
