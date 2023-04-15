@@ -54,7 +54,7 @@ param_dist = {
 }
 
 random_search = RandomizedSearchCV(
-    xgb_model, param_dist, n_iter=100, cv=5, scoring='accuracy', random_state=42)
+    xgb_model, param_dist, n_iter=100, cv=5, scoring='accuracy')
 random_search.fit(X_train, y_train)
 
 best_params = random_search.best_params_
