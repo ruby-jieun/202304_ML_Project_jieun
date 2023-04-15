@@ -1,4 +1,3 @@
-# 수정중
 import os
 import librosa
 import numpy as np
