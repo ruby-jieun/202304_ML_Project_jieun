@@ -3,6 +3,14 @@
 
 
 
+## 0. CNN
+
+
+
+### CNN1
+
+
+
 ## 1. CNN
 
 
@@ -238,11 +246,40 @@ CNN1에서 모델 아키텍처 변경으로 Conv2D 레이어의 필터 개수를
 **데이터 셋을 test_dataset.csv로 설정한 코드 실행 결과**
 
 ```
-최적의 하이퍼파라미터: {'learning_rate': 0.11712624707999042, 'max_depth': 18, 'min_child_weight': 1, 'n_estimators': 299} 'n_estimators': 299}
+최적의 하이퍼파라미터: {'learning_rate': 0.11712624707999042, 'max_depth': 18, 'min_child_weight': 1, 'n_estimators': 299}
 예측한 음악 장르: classical
 정확도: 94.67%
 교차 검증된 정확도: 91.17%
 ```
 
 ![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/confusion_matrix_test_dataset.png)
+
+
+
+
+
+**데이터 셋을 train_dataset.csv로 설정한 코드 실행 결과**
+
+```
+최적의 하이퍼파라미터: {'learning_rate': 0.08799815109814886, 'max_depth': None, 'min_child_weight': 1, 'n_estimators': 283}
+예측한 음악 장르: classical
+정확도: 90.56%
+교차 검증된 정확도: 89.90%
+```
+
+![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/confusion_matrix_train_dataset.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
