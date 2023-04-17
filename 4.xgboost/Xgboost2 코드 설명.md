@@ -205,10 +205,10 @@ print(f"최적의 하이퍼파라미터: {best_params}")
 **코드 실행 결과**
 
 ```
-최적의 하이퍼파라미터: {'learning_rate': 0.17940931103542268, 'max_depth': 10, 'min_child_weight': 1, 'n_estimators': 295}
+최적의 하이퍼파라미터: {'learning_rate': 0.136256087783457, 'max_depth': 24, 'min_child_weight': 2, 'n_estimators': 65}
 예측한 음악 장르: classical
-정확도: 76.50%
-교차 검증된 정확도: 76.88%
+정확도: 81.00%
+교차 검증된 정확도: 76.75%
 ```
 
 **데이터 셋을 features_3_sec.csv로 변경한 코드 실행 결과**
