@@ -1,6 +1,3 @@
----
-typora-root-url: 0.Confusion_matrix
----
 
 # ML_jieun
 
@@ -247,5 +244,5 @@ CNN1에서 모델 아키텍처 변경으로 Conv2D 레이어의 필터 개수를
 교차 검증된 정확도: 91.17%
 ```
 
-![](/confusion_matrix_test_dataset.png)
+![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/confusion_matrix_test_dataset.png)
 
