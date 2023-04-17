@@ -361,5 +361,60 @@ CNN1에서 모델 아키텍처 변경으로 Conv2D 레이어의 필터 개수를
 
 
 
+###  xgboost5
+
+
+
+테스트 음원의 길이가 너무 짧아서 오류를 발생시켜 코드에 예외 처리를 추가했다.
+
+
+
+
+
+**disco1.wav 코드 실행 결과**
+
+```
+최적의 하이퍼파라미터: {'learning_rate': 0.14195598843395105, 'max_depth': 13, 'min_child_weight': 1, 'n_estimators': 272}
+0-3초
+예측한 음악 장르: classical
+
+3-6초
+예측한 음악 장르: classical
+
+6-9초
+예측한 음악 장르: classical
+
+9-12초
+예측한 음악 장르: pop
+
+12-15초
+예측한 음악 장르: pop
+
+15-18초
+예측한 음악 장르: jazz
+
+18-21초
+예측한 음악 장르: jazz
+
+C:\Users\JIEUN\AppData\Local\Programs\Python\Python39\lib\site-packages\librosa\core\spectrum.py:256: UserWarning: n_fft=1024 is too large for input 
+signal of length=739
+  warnings.warn(
+21-24초
+예측한 음악 장르: classical
+
+오류 발생 (offset: 24, duration: 3): module 'soundfile' has no attribute 'SoundFileRuntimeError'
+24-27초 예측 실패 (오류)
+
+오류 발생 (offset: 27, duration: 3): module 'soundfile' has no attribute 'SoundFileRuntimeError'
+27-30초 예측 실패 (오류)
+
+정확도: 92.33%
+교차 검증된 정확도: 92.00%
+```
+
+![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/Xgboost4_disco1.png)
+
+
+
 
 
