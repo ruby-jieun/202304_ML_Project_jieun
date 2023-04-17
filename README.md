@@ -317,7 +317,7 @@ CNN1에서 모델 아키텍처 변경으로 Conv2D 레이어의 필터 개수를
 
 
 
-**코드 실행 결과**
+**데이터 셋을 test_dataset.csv로 설정한 코드 실행 결과**
 
 ```
 최적의 하이퍼파라미터: {'learning_rate': 0.11803817668718833, 'max_depth': None, 'min_child_weight': 3, 'n_estimators': 201}
