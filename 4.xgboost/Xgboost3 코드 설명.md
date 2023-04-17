@@ -1,6 +1,3 @@
----
-typora-root-url: ..\0.Confusion_matrix
----
 
 # Xgboost3 코드 설명
 
@@ -54,7 +51,7 @@ save_confusion_matrix_plot(xgb_model, X_test, y_test, genre_classes, 'confusion_
 교차 검증된 정확도: 91.17%
 ```
 
-![](/confusion_matrix_test_dataset.png)
+![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/confusion_matrix_test_dataset.png)
 
 
 
