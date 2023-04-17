@@ -3,11 +3,29 @@
 
 
 
-## 0. CNN
+
+
+## 0. 테스트음원
 
 
 
-### CNN1
+```
+https://gongu.copyright.or.kr/gongu/main/main.do
+
+DISCO
+69_디스코.mp3
+Luv.mp3
+청춘계급.mp3
+
+POP
+LoveMe.mp3
+CURIOS DAY.mp3
+YOUR EYES.mp3
+```
+
+
+
+
 
 
 
@@ -239,6 +257,20 @@ CNN1에서 모델 아키텍처 변경으로 Conv2D 레이어의 필터 개수를
 
 
 
+###  xgboost3
+
+
+
+
+
+
+
+학습된 결과를 `Confusion Matrix plot`으로 만들고 .png 파일로 저장합니다.
+
+처음엔 `plot_confusion_matrix` 함수를 사용했지만, 오류가 반복적으로 발생하여. 직접 `Confusion Matrix`를 그리는 방법으로 대체했습니다.
+
+
+
 
 
 
@@ -276,6 +308,54 @@ CNN1에서 모델 아키텍처 변경으로 Conv2D 레이어의 필터 개수를
 
 
 
+
+###  xgboost4
+
+
+
+음원 파일을 3초씩 끊어서 0초부터 30초까지 예측한 음악 장르를 볼 수 있도록 코드를 수정했습니다.
+
+
+
+**코드 실행 결과**
+
+```
+최적의 하이퍼파라미터: {'learning_rate': 0.11803817668718833, 'max_depth': None, 'min_child_weight': 3, 'n_estimators': 201}
+0-3초
+예측한 음악 장르: classical
+
+3-6초
+예측한 음악 장르: classical
+
+6-9초
+예측한 음악 장르: classical
+
+9-12초
+예측한 음악 장르: classical
+
+12-15초
+예측한 음악 장르: reggae
+
+15-18초
+예측한 음악 장르: classical
+
+18-21초
+예측한 음악 장르: classical
+
+21-24초
+예측한 음악 장르: classical
+
+24-27초
+예측한 음악 장르: classical
+
+27-30초
+예측한 음악 장르: classical
+
+정확도: 92.17%
+교차 검증된 정확도: 92.42%
+```
+
+![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/Xgboost4.png)
 
 
 
