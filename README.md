@@ -412,7 +412,7 @@ signal of length=739
 교차 검증된 정확도: 92.00%
 ```
 
-![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/Xgboost4_disco1.png)
+![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/Xgboost5_disco1.png)
 
 
 
