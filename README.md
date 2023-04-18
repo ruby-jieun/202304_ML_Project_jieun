@@ -479,41 +479,8 @@ XGBoost 모델을 CPU만으로 학습을 진행하니, 시간이 너무 오래�
 **disco2.wav 코드 실행 결과**
 
 ```
-GPU가 있습니다.
-최적의 하이퍼파라미터: {'learning_rate': 0.18426234882676515, 'max_depth': 17, 'min_child_weight': 3, 'n_estimators': 282}
-0-3초
-예측한 음악 장르: classical
 
-3-6초
-예측한 음악 장르: classical
-
-6-9초
-예측한 음악 장르: classical
-
-9-12초
-예측한 음악 장르: classical
-
-12-15초
-예측한 음악 장르: classical
-
-15-18초
-예측한 음악 장르: classical
-
-18-21초
-예측한 음악 장르: classical
-
-21-24초
-예측한 음악 장르: classical
-
-24-27초
-예측한 음악 장르: classical
-
-27-30초
-예측한 음악 장르: classical
-
-정확도: 93.50%
-교차 검증된 정확도: 91.17%
 ```
 
-![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/Xgboost6_disco2.png)
+
 
