@@ -137,7 +137,7 @@ signal of length=739
 
 
 
-**disco1.wav 코드 실행 결과**
+**pop1.wav 코드 실행 결과**
 
 ```
 최적의 하이퍼파라미터: {'learning_rate': 0.19535337721066814, 'max_depth': None, 'min_child_weight': 2, 'n_estimators': 284}
