@@ -105,3 +105,47 @@ GPU가 있습니다.
 ```
 
 ![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/Xgboost6_disco2.png)
+
+
+
+
+
+**disco3.wav 코드 실행 결과**
+
+```
+최적의 하이퍼파라미터: {'learning_rate': 0.07870781512814429, 'max_depth': None, 'min_child_weight': 2, 'n_estimators': 268}
+0-3초
+예측한 음악 장르: classical
+
+3-6초
+예측한 음악 장르: classical
+
+6-9초
+예측한 음악 장르: reggae
+
+9-12초
+예측한 음악 장르: reggae
+
+12-15초
+예측한 음악 장르: classical
+
+15-18초
+예측한 음악 장르: classical
+
+18-21초
+예측한 음악 장르: classical
+
+21-24초
+예측한 음악 장르: classical
+
+24-27초
+예측한 음악 장르: reggae
+
+27-30초
+예측한 음악 장르: pop
+
+정확도: 93.50%
+교차 검증된 정확도: 91.92%
+```
+
+![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/Xgboost6_disco3.png)
