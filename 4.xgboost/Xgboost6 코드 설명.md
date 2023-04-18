@@ -21,10 +21,14 @@ XGBoost 모델을 GPU를 사용하여 학습하고 예측을 수행하면 다음
 
 
 
-GPU 사용 가능 여부를 확인하기 위해 코드 맨 위에 torch 라이브러리를 가져온다.
+GPU 사용 가능 여부를 확인하기 위해 import torch와, import tensorflow as tf를 이용해봤지만 제 PC에서 인식하지 못해 새로운 방법을 찾아보았습니다.
+
+
+
+NVIDIA System Management Interface(`nvidia-smi`)를 사용해보았습니다.
 
 ```python
-import torch
+import subprocessxxxxxxxxxx import subprocessimport torch
 ```
 
 
@@ -32,11 +36,18 @@ import torch
 시스템에 GPU가 있는지 확인한다.
 
 ```python
-# GPU 확인
-if torch.cuda.is_available():
-    print('GPU가 있습니다.')
+def check_gpu():
+    try:
+        output = subprocess.check_output("nvidia-smi", shell=True)
+        return "No devices were found" not in output.decode("utf-8")
+    except Exception as e:
+        print(f"오류 발생: {e}")
+        return False
+
+if check_gpu():
+    print("GPU가 있습니다.")
 else:
-    print('GPU가 없습니다.')
+    print("GPU가 없습니다.")
 ```
 
 
@@ -44,6 +55,52 @@ else:
 XGBoost 모델 생성 시 GPU를 사용하도록 설정한다.
 
 ```python
-xgb_model = xgb.XGBClassifier(tree_method='gpu_hist', gpu_id=0)
+xgb_model = xgb.XGBClassifier(tree_method='gpu_hist', gpu_id=0) if check_gpu() else xgb.XGBClassifier()
 ```
 
+
+
+
+
+
+
+**disco2.wav 코드 실행 결과**
+
+```
+GPU가 있습니다.
+최적의 하이퍼파라미터: {'learning_rate': 0.18426234882676515, 'max_depth': 17, 'min_child_weight': 3, 'n_estimators': 282}
+0-3초
+예측한 음악 장르: classical
+
+3-6초
+예측한 음악 장르: classical
+
+6-9초
+예측한 음악 장르: classical
+
+9-12초
+예측한 음악 장르: classical
+
+12-15초
+예측한 음악 장르: classical
+
+15-18초
+예측한 음악 장르: classical
+
+18-21초
+예측한 음악 장르: classical
+
+21-24초
+예측한 음악 장르: classical
+
+24-27초
+예측한 음악 장르: classical
+
+27-30초
+예측한 음악 장르: classical
+
+정확도: 93.50%
+교차 검증된 정확도: 91.17%
+```
+
+![](https://github.com/ZBDS11ML3/ML_jieun/blob/main/0.Confusion_matrix/Xgboost6_disco2.png)

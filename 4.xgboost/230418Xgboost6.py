@@ -10,13 +10,22 @@ from sklearn.preprocessing import LabelEncoder
 from scipy.stats import randint, uniform
 import matplotlib.pyplot as plt
 import seaborn as sns
-import torch  # 추가된 부분
+import subprocess
 
-# GPU 확인
-if torch.cuda.is_available():
-    print('GPU가 있습니다.')
+
+def check_gpu():
+    try:
+        output = subprocess.check_output("nvidia-smi", shell=True)
+        return "No devices were found" not in output.decode("utf-8")
+    except Exception as e:
+        print(f"오류 발생: {e}")
+        return False
+
+
+if check_gpu():
+    print("GPU가 있습니다.")
 else:
-    print('GPU가 없습니다.')
+    print("GPU가 없습니다.")
 
 
 def extract_features(file_path, n_features):
@@ -75,7 +84,8 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
 # XGBoost 모델 생성 시 GPU 사용 설정
-xgb_model = xgb.XGBClassifier(tree_method='gpu_hist', gpu_id=0)
+xgb_model = xgb.XGBClassifier(
+    tree_method='gpu_hist', gpu_id=0) if check_gpu() else xgb.XGBClassifier()
 
 param_dist = {
     'n_estimators': randint(10, 300),
