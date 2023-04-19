@@ -153,4 +153,4 @@ def save_confusion_matrix_plot(model, X_test, y_test, class_names, file_name):
 
 
 save_confusion_matrix_plot(xgb_model, X_test, y_test,
-                           genre_classes, '0.Confusion_matrix/Xgboost6_disco2.png')
+                           genre_classes, '0.Confusion_matrix/Xgboost6_disco3.png')
